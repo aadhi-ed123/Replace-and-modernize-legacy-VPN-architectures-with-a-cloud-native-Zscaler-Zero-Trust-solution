@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modernizing Legacy VPN to Zero Trust | Zscaler</title>
+    <meta name="description" content="A real-world enterprise transformation replacing legacy VPN with Cloud-Native Zero Trust Architecture.">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="glow-background"></div>
+    
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">ZeroTrust<span>Move</span></h1>
+            <ul class="nav-links">
+                <li><a href="#problem">Problem</a></li>
+                <li><a href="#architecture">Architecture</a></li>
+                <li><a href="#comparison">Comparison</a></li>
+                <li><a href="#implementation">Implementation</a></li>
+                <li><a href="#outcomes">Outcomes</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container hero-content hidden-element">
+            <div class="badge">Enterprise Transformation Project</div>
+            <h1 class="hero-title">Modernizing Legacy VPN to <br><span class="gradient-text">Cloud-Native Zero Trust</span></h1>
+            <p class="hero-subtitle">Replacing traditional, perimeter-based network security with a Zero Trust Architecture powered by Zscaler. Reducing attack surface, eliminating lateral movement, and securing the hybrid workforce.</p>
+            <div class="hero-actions">
+                <a href="#architecture" class="btn btn-primary">View Architecture</a>
+                <a href="#comparison" class="btn btn-secondary">VPN vs Zero Trust</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="problem" class="section">
+        <div class="container">
+            <h2 class="section-title hidden-element">The Problem with Legacy VPNs</h2>
+            <div class="grid-3">
+                <div class="card hidden-element">
+                    <div class="card-icon">🌍</div>
+                    <h3>Broad Network Access</h3>
+                    <p>VPNs place users directly onto the corporate network. Once inside the perimeter, users have excessive visibility into internal routing and resources.</p>
+                </div>
+                <div class="card hidden-element" style="transition-delay: 100ms;">
+                    <div class="card-icon">🦠</div>
+                    <h3>Security & Lateral Movement</h3>
+                    <p>Compromised end-user devices or stolen credentials allow attackers to easily pivot and move laterally across data centers and cloud environments.</p>
+                </div>
+                <div class="card hidden-element" style="transition-delay: 200ms;">
+                    <div class="card-icon">⏳</div>
+                    <h3>Scalability Issues</h3>
+                    <p>Backhauling all traffic through central VPN concentrators creates network choke points, resulting in high latency and expensive hardware scaling.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="usecase" class="section bg-darker">
+        <div class="container hidden-element">
+            <div class="usecase-box glass-panel">
+                <h2 class="section-title text-left">Realistic Enterprise Use Case</h2>
+                <p><strong>Context:</strong> A global enterprise with 10,000+ employees recently transitioned to a "work-from-anywhere" model. Employees require seamless access to a hybrid environment: SaaS apps (M365, Salesforce) and private, custom internal applications hosted on-premises and in AWS.</p>
+                <p>The legacy VPN is suffering from bandwidth exhaustion, latency complaints, and a recent security audit flagged an unacceptable level of internal lateral movement risk.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="architecture" class="section">
+        <div class="container">
+            <h2 class="section-title hidden-element">Redesigned Architecture</h2>
+            <p class="section-description hidden-element">Moving from perimeter-based security to Identity and Context-based security via Zscaler.</p>
+            
+            <div class="flow-diagram hidden-element">
+                <div class="flow-step">
+                    <div class="flow-node">User</div>
+                    <span>Remote/Hybrid</span>
+                </div>
+                <div class="flow-arrow">➔</div>
+                <div class="flow-step">
+                    <div class="flow-node highlight">Zscaler Client Connector</div>
+                    <span>Identity & Posture</span>
+                </div>
+                <div class="flow-arrow">➔</div>
+                <div class="flow-step">
+                    <div class="flow-node primary">Zero Trust Exchange</div>
+                    <span>Cloud Broker</span>
+                </div>
+                <div class="flow-arrow">➔</div>
+                <div class="flow-step">
+                    <div class="flow-node">App Connector</div>
+                    <span>Inside-Out</span>
+                </div>
+                <div class="flow-arrow">➔</div>
+                <div class="flow-step">
+                    <div class="flow-node database">Application</div>
+                    <span>SaaS / Internal</span>
+                </div>
+            </div>
+
+            <div class="grid-2 mt-4">
+                <div class="info-block hidden-element">
+                    <h3>Zscaler Private Access (ZPA)</h3>
+                    <p>Replaces the inbound VPN. ZPA brokers inside-out connections between users and specific internal applications (micro-segmentation). No inbound firewall ports are opened; the network remains "dark" to the internet.</p>
+                </div>
+                <div class="info-block hidden-element" style="transition-delay: 100ms;">
+                    <h3>Zscaler Internet Access (ZIA)</h3>
+                    <p>A Secure Web Gateway (SWG) that protects users connecting to the internet and SaaS applications. Ensures continuous threat protection and Data Loss Prevention (DLP) without backhauling traffic.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="comparison" class="section bg-darker">
+        <div class="container">
+            <h2 class="section-title hidden-element">Legacy VPN vs. Zero Trust</h2>
+            <div class="table-container hidden-element">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Legacy VPN Architecture</th>
+                            <th>Zscaler Zero Trust Architecture</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Trust Model</strong></td>
+                            <td>Trust by location (inside perimeter)</td>
+                            <td class="positive">Never trust, always verify (Identity & Context)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Access Level</strong></td>
+                            <td>Network-level access (broad visibility)</td>
+                            <td class="positive">Application-level access (micro-segmentation)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Visibility</strong></td>
+                            <td>VPN gateways are publicly visible</td>
+                            <td class="positive">Internal apps are invisible (Dark to the Internet)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Traffic Routing</strong></td>
+                            <td>Backhauled through the data center</td>
+                            <td class="positive">Direct-to-app routing via closest cloud edge node</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Lateral Movement</strong></td>
+                            <td class="negative">High risk (users can scan network subnets)</td>
+                            <td class="positive">Eliminated (users never touch the underlying network)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="implementation" class="section">
+        <div class="container">
+            <h2 class="section-title hidden-element">Implementation Roadmap</h2>
+            <div class="timeline">
+                <div class="timeline-item hidden-element">
+                    <div class="timeline-dot">1</div>
+                    <div class="timeline-content glass-panel">
+                        <h3>Phase 1: Assessment & Discovery</h3>
+                        <ul>
+                            <li>Audit existing VPN usage, capacity, and critical user groups.</li>
+                            <li>Deploy Zscaler App Connectors in "discovery mode" to map unauthorized/shadow IT applications.</li>
+                            <li>Integrate Zscaler with the corporate IdP (Azure AD/Okta) using SAML/SCIM.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item hidden-element">
+                    <div class="timeline-dot">2</div>
+                    <div class="timeline-content glass-panel">
+                        <h3>Phase 2: Pilot & Policy Design</h3>
+                        <ul>
+                            <li>Define granular, least-privilege access policies (mapping users to apps).</li>
+                            <li>Roll out the Zscaler Client Connector to the IT department for validation.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item hidden-element">
+                    <div class="timeline-dot">3</div>
+                    <div class="timeline-content glass-panel">
+                        <h3>Phase 3: Gradual Migration</h3>
+                        <ul>
+                            <li>Phased rollout by business unit or geography.</li>
+                            <li>Gradually shift application traffic from the legacy VPN to ZPA.</li>
+                            <li>Monitor logs continuously to tune access policies.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item hidden-element">
+                    <div class="timeline-dot">4</div>
+                    <div class="timeline-content glass-panel">
+                        <h3>Phase 4: Full Rollout & Decommissioning</h3>
+                        <ul>
+                            <li>Complete 100% workforce deployment.</li>
+                            <li>Formally decommission legacy VPN hardware.</li>
+                            <li>Close all inbound firewall ports and remove external DNS entries.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="outcomes" class="section bg-darker">
+        <div class="container">
+            <h2 class="section-title hidden-element">Business & Security Outcomes</h2>
+            <div class="grid-2">
+                <div class="glass-panel p-4 hidden-element">
+                    <h3 class="gradient-text mb-3">Security Enhancements</h3>
+                    <ul class="feature-list">
+                        <li><strong>Zero Lateral Movement:</strong> Compromised endpoints are isolated.</li>
+                        <li><strong>Reduced Attack Surface:</strong> Complete elimination of inbound perimeter hardware.</li>
+                        <li><strong>Least Privilege Access:</strong> Access dynamically granted to specific applications.</li>
+                        <li><strong>Reduced Breach Impact:</strong> Blast radius contained to a single application.</li>
+                    </ul>
+                </div>
+                <div class="glass-panel p-4 hidden-element" style="transition-delay: 100ms;">
+                    <h3 class="gradient-text mb-3">Business Value</h3>
+                    <ul class="feature-list">
+                        <li><strong>Cost Savings:</strong> Eradicates CapEx for hardware, licensing, and backhaul bandwidth.</li>
+                        <li><strong>Enhanced Scalability:</strong> Cloud platform scales instantaneously.</li>
+                        <li><strong>Improved Performance:</strong> Direct-to-cloud connections eliminate VPN latency.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="metrics-grid mt-4">
+                <div class="metric-card hidden-element">
+                    <div class="metric-value">100%</div>
+                    <div class="metric-label">Reduction in VPN usage</div>
+                </div>
+                <div class="metric-card hidden-element" style="transition-delay: 100ms;">
+                    <div class="metric-value">> 80%</div>
+                    <div class="metric-label">Fewer security incidents</div>
+                </div>
+                <div class="metric-card hidden-element" style="transition-delay: 200ms;">
+                    <div class="metric-value">> 30%</div>
+                    <div class="metric-label">Improved access latency</div>
+                </div>
+                <div class="metric-card hidden-element" style="transition-delay: 300ms;">
+                    <div class="metric-value">Hours</div>
+                    <div class="metric-label">Deployment velocity vs Days</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Enterprise Zero Trust Transformation Project. Designed for Portfolio & Presentation.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
